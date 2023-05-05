@@ -1,5 +1,5 @@
 <?php
-$pswLength = $_GET['pswLength'];
+include './partials/function.php';
 
 ?>
 
@@ -17,15 +17,20 @@ $pswLength = $_GET['pswLength'];
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="container text-center mt-5">
         <h1>Inserisci la lunghezza della tua password</h1>
-        <form action="" method="GET" class="d-flex flex-column align-items-center">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET" class="d-flex flex-column align-items-center">
             <input type="number" name="pswLength" id="pswLength">
 
             <button class="btn btn-danger my-2">
                 Invia
             </button>
         </form>
+
+        <h2>
+            La tua nuova password è:
+            <?php echo $newPassword ?>
+        </h2>
 
 
 
